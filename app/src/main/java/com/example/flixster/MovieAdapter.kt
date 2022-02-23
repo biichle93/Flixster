@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class MovieAdapter(private val context: Context, private val movies: List<Movie>)
     : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
@@ -31,7 +32,7 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
         fun bind(movie: Movie){
             tvTitle.text = movie.title
             tvOverview.text = movie.overview
-            //populate image
+            Glide.with(context).load(movie.posterImageURL).into(ivPoster)
         }
 
     }
