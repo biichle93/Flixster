@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Flixster</string>
+    <string name="overview_test_string">Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.</string>
+    <string name="title_test_string">SpiderMan-: No Way Home</string>
 </resources>
