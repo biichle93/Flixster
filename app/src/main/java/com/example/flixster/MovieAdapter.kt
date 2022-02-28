@@ -63,7 +63,6 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
         override fun onClick(v: View?) {
             // get notified for which movie was clicked
             val movieClicked = movies[adapterPosition]
-            Toast.makeText(context, movieClicked.title + " was clicked", Toast.LENGTH_SHORT).show()
             // use intents to launch new activity
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra(MOVIE_EXTRA, movieClicked)
