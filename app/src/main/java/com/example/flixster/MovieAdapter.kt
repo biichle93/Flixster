@@ -4,17 +4,24 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.Configuration
 import android.view.LayoutInflater
+import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation
+
 
 const val MOVIE_EXTRA = "MOVIE_EXTRA"
 
-class MovieAdapter(private val context: Context, private val movies: List<Movie>)
+class MovieAdapter(
+    private val context: Context,
+    private val movies: List<Movie>,
+)
     : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -66,7 +73,11 @@ class MovieAdapter(private val context: Context, private val movies: List<Movie>
             // use intents to launch new activity
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra(MOVIE_EXTRA, movieClicked)
-            context.startActivity(intent)
+            val p1 = androidx.core.util.Pair(tvOverview as View, "overview")
+            val p2 = androidx.core.util.Pair(tvTitle as View, "title")
+            val p3 = androidx.core.util.Pair(ivPoster as View, "poster")
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(context as MainActivity, p1,p2,p3)
+            context.startActivity(intent, options.toBundle())
         }
     }
     }

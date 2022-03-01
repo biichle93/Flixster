@@ -71,7 +71,11 @@ class DetailActivity : YouTubeBaseActivity() {
                 player: YouTubePlayer?,
                 p2: Boolean
             ) {
-                player?.cueVideo(movieKey)
+                if(ratingBar.rating > 5){
+                    player?.loadVideo(movieKey)
+                }else{
+                    player?.cueVideo(movieKey)
+                }
             }
 
             override fun onInitializationFailure(

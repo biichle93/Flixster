@@ -10,11 +10,13 @@
 
     <com.google.android.youtube.player.YouTubePlayerView
         android:id="@+id/player"
+        android:transitionName="poster"
         android:layout_width="match_parent"
         android:layout_height="250dp"/>
 
     <TextView
         android:id="@+id/tvTitleDetail"
+        android:transitionName="title"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -23,22 +25,10 @@
         android:text="@string/title_test_string"
         />
 
-    <RatingBar
-        android:id="@+id/ratingBar"
-        style="@style/Widget.AppCompat.RatingBar.Indicator"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:isIndicator="true"
-        android:rating="4.5"
-        android:numStars="10"
-        android:stepSize="0.5"
-        />
 
     <TextView
         android:id="@+id/tvOverviewDetail"
+        android:transitionName="overview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -46,4 +36,16 @@
         android:layout_marginEnd="8dp"
         android:text="@string/overview_test_string" />
 
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:isIndicator="true"
+        android:numStars="10"
+        android:rating="4.5"
+        android:stepSize="0.5" />
 </LinearLayout>
